@@ -12,13 +12,21 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
+% Find indcicies
+ind_pos = find (y == 1);
+ind_neg = find (y == 0);
 
+% Plot negative examples  
+plot( X(ind_pos, 1), X(ind_pos, 2)', 'k+', 'MarkerFaceColor', 'r', 'LineWidth', 2, 'MarkerSize', 7);
+plot( X(ind_neg, 1), X(ind_neg, 2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7);
 
+% Labels and Legend
+xlabel('Exam 1 score')
+ylabel('Exam 2 score')
 
-
-
-
-
+% Specified in plot order
+legend('Admitted', 'Not admitted')
+hold off;
 
 % =========================================================================
 
